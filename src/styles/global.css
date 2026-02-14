@@ -54,3 +54,60 @@
     @apply text-xl md:text-2xl font-semibold;
   }
 }
+
+@layer components {
+  .content {
+    > * {
+      @apply mt-4;
+    }
+
+    p {
+      @apply text-lg sm:text-xl;
+    }
+
+    > p:first-child::first-letter {
+      @apply float-left mt-2 me-2 sm:me-4 text-6xl sm:text-7xl md:text-8xl uppercase;
+    }
+
+    h2 {
+      @apply mt-8 md:mt-10;
+    }
+    
+    h3 {
+      @apply mt-6 md:mt-8;
+    }
+    
+    h4 {
+      @apply md:mt-6;
+    }
+
+    blockquote {
+      @apply md:-mx-18 lg:-mx-36 my-8 md:my-16 font-medium sm:text-center;
+
+      p {
+        @apply text-3xl sm:text-4xl italic;
+      }
+
+      cite {
+        @apply text-xl;
+      }
+    }
+
+    ul {
+      @apply list-disc;
+    }
+
+    ol {
+      @apply list-decimal;
+    }
+
+    ul,
+    ol {
+      @apply list-inside text-lg sm:text-xl;
+
+      ul, ol {
+        @apply ms-4 mb-2;
+      }
+    }
+  }
+}
