@@ -20,9 +20,12 @@ const { Content } = await render(post);
 <Layout {...post.data}>
 	<PageHeader title={post.data.title}>
 		{post.data.excerpt && (
-			<PageExcerpt>
-				{post.data.excerpt}
-			</PageExcerpt>
+			<>
+				<PageExcerpt>
+					{post.data.excerpt}
+				</PageExcerpt>
+				<hr class="mt-8 sm:mt-12 md:mt-16 sm:mx-auto max-w-16 sm:max-w-24 border-y-1" />
+			</>
 		)}
 	</PageHeader>
 	<div class="mx-auto max-w-xl content">
