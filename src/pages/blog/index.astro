@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
 
 const posts = (await getCollection('posts')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -10,6 +11,7 @@ const SITE_DESCRIPTION = 'Latest blog posts from Thomas Weichselbaumer, a web de
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION} >
+	<PageHeader title="Latest posts" />
 	<section>
 		<ul>
 			{

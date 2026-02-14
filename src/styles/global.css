@@ -20,6 +20,17 @@
 
   --text-5xl: 2.75rem;
   --text-6xl: 3.5rem;
+
+  --text-xs--line-height: 1.5;
+  --text-sm--line-height: 1.5;
+  --text-base--line-height: 1.5;
+  --text-lg--line-height: 1.5;
+  --text-xl--line-height: 1.5;
+  --text-2xl--line-height: 1.5;
+  --text-3xl--line-height: 1.5;
+  --text-4xl--line-height: 1.3;
+  --text-5xl--line-height: 1.3;
+  --text-6xl--line-height: 1.15;
 }
 
 @layer base {
