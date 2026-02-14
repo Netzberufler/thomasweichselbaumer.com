@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import '@fontsource-variable/albert-sans' layer(base);
+@import '@fontsource-variable/lora' layer(base);
 
 @theme {
   --color-main-50: oklch(0.969 0.007 67.76);
@@ -12,4 +14,32 @@
   --color-main-800: oklch(0.311 0.019 70.31);
   --color-main-900: oklch(0.226 0.014 72.11);
   --color-main-950: oklch(0.177 0.01 67.06);
+
+  --font-sans: 'Albert Sans Variable', sans-serif;
+  --font-serif: 'Lora Variable', serif;
+
+  --text-5xl: 2.75rem;
+  --text-6xl: 3.5rem;
+}
+
+@layer base {
+  h1, h2, h3, h4 {
+    @apply font-sans;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl font-bold;
+  }
+  
+  h2 {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
 }
