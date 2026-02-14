@@ -2,7 +2,9 @@
 import HeaderNavigation from './HeaderNavigation.astro';
 ---
 
-<header>
-	<p>Thomas Weichselbaumer</p>
+<header class="py-4 sm:py-8 lg:py-16 flex flex-col sm:flex-row gap-6 sm:justify-between sm:items-center [&_a]:hover:underline [&_a]:underline-offset-4">
+	<p class="text-xl">
+		<a href="/">Thomas Weichselbaumer</a>
+	</p>
 	<HeaderNavigation />
 </header>
