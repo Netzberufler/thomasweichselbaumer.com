@@ -1,0 +1,11 @@
+---
+import FooterNavigation from './FooterNavigation.astro';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="mt-8 sm:mt-16 md:mt-24 py-4 sm:py-8 md:py-12 flex flex-col sm:flex-row gap-3 sm:justify-between sm:items-center [&_a]:hover:underline [&_a]:underline-offset-4">
+	<p class="font-sans font-medium text-lg">
+		&copy; {currentYear} Build with ❤️ and Astro.
+	</p>
+	<FooterNavigation />
+</footer>
