@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import PageExcerpt from '../components/PageExcerpt.astro';
+import Button from '../components/Button.astro';
 import PostList from '../components/PostList.astro';
 
 const SITE_TITLE = 'Thomas Weichselbaumer';
@@ -13,10 +14,21 @@ const SITE_DESCRIPTION = 'I\'m a web developer from Augsburg, Germany. Specializ
 		<PageExcerpt>
 			I'm a web developer from Augsburg, Germany. Specializing in front-end development, I mainly work with WordPress, React, and TypeScript.
 		</PageExcerpt>
+		<div class="mt-8 flex gap-4 justify-center">
+			<Button href="/projects/">
+				My projects
+			</Button>
+			<Button href="/about/" variant="secondary">
+				About me
+			</Button>
+		</div>
 		<hr class="mt-8 sm:mt-12 md:mt-16 sm:mx-auto max-w-16 sm:max-w-24 border-y-1" />
 	</PageHeader>
 	<section class="mx-auto max-w-2xl">
 		<h2 class="mb-8">Latest Posts</h2>
 		<PostList numberOfPosts={5} tag="h3" />
+		<Button className="mt-8" href="/blog/" variant="secondary">
+			View all posts
+		</Button>
 	</section>
 </Layout>
