@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const SITE_TITLE = 'Thomas Weichselbaumer';
+const SITE_DESCRIPTION = 'I\'m a web developer from Augsburg, Germany. Specializing in front-end development, I mainly work with WordPress, React, and TypeScript.';
 ---
 
-<Layout>
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION} >
 	<h1>Hey, I'm Thomas 👋</h1>
 </Layout>
