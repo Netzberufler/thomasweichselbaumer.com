@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import PageExcerpt from '../../components/PageExcerpt.astro';
+import Separator from '../../components/Separator.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('posts');
@@ -24,7 +25,7 @@ const { Content } = await render(post);
 				<PageExcerpt>
 					{post.data.excerpt}
 				</PageExcerpt>
-				<hr class="mt-8 sm:mt-12 md:mt-16 sm:mx-auto max-w-16 sm:max-w-24 border-y-1" />
+				<Separator />
 			</>
 		)}
 	</PageHeader>
