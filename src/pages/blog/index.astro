@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
+import PageExcerpt from '../../components/PageExcerpt.astro';
 import PostList from '../../components/PostList.astro';
 
 
@@ -9,7 +10,11 @@ const SITE_DESCRIPTION = 'Latest blog posts from Thomas Weichselbaumer, a web de
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION} >
-	<PageHeader title="Latest posts" />
+	<PageHeader title="Latest posts">
+		<PageExcerpt>
+			Every year, I try to write a short recap.
+		</PageExcerpt>
+	</PageHeader>
 	<section class="mx-auto max-w-2xl">
 		<PostList />
 	</section>
