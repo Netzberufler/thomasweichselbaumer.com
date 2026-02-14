@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
+import PageExcerpt from '../../components/PageExcerpt.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('posts');
@@ -17,6 +18,14 @@ const { Content } = await render(post);
 ---
 
 <Layout {...post.data}>
-	<PageHeader title={post.data.title} />
-	<Content />
+	<PageHeader title={post.data.title}>
+		{post.data.excerpt && (
+			<PageExcerpt>
+				{post.data.excerpt}
+			</PageExcerpt>
+		)}
+	</PageHeader>
+	<div class="mx-auto max-w-xl content">
+		<Content />
+	</div>
 </Layout>
