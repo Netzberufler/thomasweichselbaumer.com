@@ -1,28 +1,16 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
+import PostList from '../../components/PostList.astro';
 
-const posts = (await getCollection('posts')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+
 const SITE_TITLE = 'Blog - Thomas Weichselbaumer';
 const SITE_DESCRIPTION = 'Latest blog posts from Thomas Weichselbaumer, a web developer from Augsburg, Germany.';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION} >
 	<PageHeader title="Latest posts" />
-	<section>
-		<ul>
-			{
-				posts.map((post) => (
-					<li>
-						<a href={`/blog/${post.id}/`}>
-							<h4 class="title">{post.data.title}</h4>
-						</a>
-					</li>
-				))
-			}
-		</ul>
+	<section class="mx-auto max-w-2xl">
+		<PostList />
 	</section>
 </Layout>
