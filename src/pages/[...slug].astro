@@ -1,0 +1,35 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import PageExcerpt from '../components/PageExcerpt.astro';
+import Separator from '../components/Separator.astro';
+
+export async function getStaticPaths() {
+	const pages = await getCollection('pages');
+	return pages.map((page) => ({
+		params: { slug: page.id },
+		props: page,
+	}));
+}
+type Props = CollectionEntry<'pages'>;
+
+const page = Astro.props;
+const { Content } = await render(page);
+---
+
+<Layout {...page.data}>
+	<PageHeader title={page.data.title}>
+		{page.data.excerpt && (
+			<>
+				<PageExcerpt>
+					{page.data.excerpt}
+				</PageExcerpt>
+				<Separator />
+			</>
+		)}
+	</PageHeader>
+	<div class="mx-auto max-w-xl content">
+		<Content />
+	</div>
+</Layout>
