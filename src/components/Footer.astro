@@ -1,11 +1,15 @@
 ---
 import FooterNavigation from './FooterNavigation.astro';
+import SocialIcons from './SocialIcons.astro';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="mt-12 sm:mt-16 md:mt-24 py-4 sm:py-8 md:py-12 flex flex-col sm:flex-row gap-3 sm:justify-between items-center [&_a]:hover:underline [&_a]:underline-offset-4">
-	<p class="font-sans font-medium text-lg">
+<footer class="mt-16 sm:mt-24 md:mt-32 mb-16">
+	<div class="py-2 sm:py-3 md:py-4 flex flex-col flex-reverse sm:flex-row gap-4 sm:justify-between items-center [&_a]:hover:underline [&_a]:underline-offset-4">
+		<FooterNavigation />
+		<SocialIcons />
+	</div>
+	<p class="max-sm:mt-4 max-sm:text-center text-sm">
 		&copy; {currentYear} Build with ❤️ and Astro.
 	</p>
-	<FooterNavigation />
 </footer>
