@@ -4,16 +4,15 @@ import PageHeader from '../components/PageHeader.astro';
 import PageExcerpt from '../components/PageExcerpt.astro';
 import Button from '../components/Button.astro';
 import PostList from '../components/PostList.astro';
-import Separator from '../components/Separator.astro';
 
 const SITE_TITLE = 'Thomas Weichselbaumer';
-const SITE_DESCRIPTION = 'I\'m a web developer from Augsburg, Germany. Specializing in front-end development, I mainly work with WordPress, React, and TypeScript.';
+const SITE_DESCRIPTION = 'I\'m a passionate web developer from Augsburg, Germany. Specializing in front-end development, I mainly work with WordPress, React, and TypeScript.';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION} >
 	<PageHeader title="Hey, I'm Thomas 👋">
 		<PageExcerpt>
-			I'm a web developer from Augsburg, Germany. Specializing in front-end development, I mainly work with WordPress, React, and TypeScript.
+			I'm a passionate web developer from Augsburg, Germany. Specializing in front-end development, I mainly work with WordPress, React, and TypeScript.
 		</PageExcerpt>
 		<div class="mt-8 flex gap-4 justify-center">
 			<Button href="/projects/">
