@@ -112,4 +112,19 @@
       @apply float-left mt-2 me-2 sm:me-4 text-6xl sm:text-7xl md:text-8xl uppercase;
     }
   }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate {
+    animation: slide-up 0.6s ease-out forwards;
+  }
 }
