@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import PageExcerpt from '../../components/PageExcerpt.astro';
+import PostDate from '../../components/PostDate.astro';
 import Separator from '../../components/Separator.astro';
 
 export async function getStaticPaths() {
@@ -31,5 +32,8 @@ const { Content } = await render(post);
 	</PageHeader>
 	<div class="mx-auto max-w-xl content has-drop-cap">
 		<Content />
+		<p class="mt-8 text-main-600">
+			Published on <PostDate date={post.data.pubDate} />
+		</p>
 	</div>
 </Layout>

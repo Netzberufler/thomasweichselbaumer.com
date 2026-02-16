@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import PostDate from './PostDate.astro';
 
 interface Props {
 	numberOfPosts?: number;
@@ -19,12 +20,15 @@ const Tag = tag as any;
 <ul class="border-b-1 border-main-300">
 	{
 		displayPosts.map((post) => (
-			<li class="py-4 border-t-1 border-main-300">
+			<li class="py-4 border-t-1 border-main-300 flex items-center justify-between">
 				<Tag class="text-xl font-medium">
 					<a class="hover:underline underline-offset-4" href={`/blog/${post.id}/`}>
 						{post.data.title}
 					</a>
 				</Tag>
+				<span class="text-main-600">
+					<PostDate date={post.data.pubDate} />
+				</span>
 			</li>
 		))
 	}
