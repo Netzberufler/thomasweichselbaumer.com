@@ -4,18 +4,30 @@ import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import PageExcerpt from '../../components/PageExcerpt.astro';
 import PostDate from '../../components/PostDate.astro';
+import PostNavigation from '../../components/PostNavigation.astro';
 import Separator from '../../components/Separator.astro';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('posts');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+    const posts = (await getCollection('posts')).sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	);
+    return posts.map((post, index) => ({
+        params: { slug: post.id },
+        props: {
+            post,
+            prevPost: index + 1 !== posts.length ? posts[index + 1] : undefined,
+            nextPost: index !== 0 ? posts[index - 1] : undefined
+        }
+    }));
 }
-type Props = CollectionEntry<'posts'>;
 
-const post = Astro.props;
+type Props = {
+	post: CollectionEntry<'posts'>;
+	prevPost?: CollectionEntry<'posts'>;
+	nextPost?: CollectionEntry<'posts'>;
+};
+
+const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await render(post);
 ---
 
@@ -36,4 +48,5 @@ const { Content } = await render(post);
 			Published on <PostDate date={post.data.pubDate} />
 		</p>
 	</div>
+	<PostNavigation prevPost={prevPost} nextPost={nextPost} />
 </Layout>

@@ -1,0 +1,20 @@
+---
+import { type CollectionEntry } from 'astro:content';
+import PostDate from './PostDate.astro';
+
+interface Props {
+	post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;	
+---
+
+<div class="py-4 border-t-1 border-main-300 sm:flex gap-8 items-center justify-between">
+	<a class="flex items-center gap-2 text-xl font-medium font-sans hover:underline underline-offset-4" href={`/blog/${post.id}/`} rel="prev">
+		<slot />
+		{post.data.title}
+	</a>
+	<span class="text-main-600">
+		<PostDate date={post.data.pubDate} />
+	</span>
+</div>
