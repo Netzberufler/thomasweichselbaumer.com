@@ -1,5 +1,5 @@
 ---
-type Variant = 'primary' | 'secondary' | 'link';
+type Variant = 'primary' | 'secondary';
 
 interface Props {
 	href: string;
@@ -9,14 +9,9 @@ interface Props {
 
 const { href, className, variant = 'primary' } = Astro.props;
 
-const primary = 'bg-main-950 hover:bg-main-800 text-main-50';
-const secondary = 'bg-main-100 hover:bg-main-200';
-const link = 'hover:bg-main-100';
-
 const variants: Record<Variant, string> = {
-	primary: 'bg-main-950 hover:bg-main-800 text-main-50',
-	secondary: 'bg-main-100 hover:bg-main-200',
-	link: 'hover:bg-main-100',
+	primary: 'bg-main-950 hover:bg-main-800 text-main-50 dark:bg-main-200 dark:hover:bg-main-300 dark:text-main-950',
+	secondary: 'bg-main-100 hover:bg-main-200 dark:bg-main-800 dark:hover:bg-main-700',
 };
 ---
 
