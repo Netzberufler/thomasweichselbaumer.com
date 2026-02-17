@@ -1,6 +1,10 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import albertSans from '@fontsource-variable/albert-sans/files/albert-sans-latin-wght-normal.woff2?url';
+import lora from '@fontsource-variable/lora/files/lora-latin-wght-normal.woff2?url';
+
 import '../styles/global.css';
+
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -25,11 +29,13 @@ const { title, description } = Astro.props;
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 		<link rel="manifest" href="/site.webmanifest">
 
-		<link rel="canonical" href={canonicalURL} />
-
 		<title>{title}</title>
 		<meta name="title" content={title} />
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<link rel="preload" as="font" type="font/woff2" href={albertSans} crossorigin="anonymous" />
+		<link rel="preload" as="font" type="font/woff2" href={lora} crossorigin="anonymous" />
 
 		<ClientRouter />
 	</head>
