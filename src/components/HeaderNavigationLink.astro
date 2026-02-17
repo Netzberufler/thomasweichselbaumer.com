@@ -1,0 +1,18 @@
+---
+interface Props {
+	href: string;
+	text: string;
+}
+
+const { href, text } = Astro.props;
+const { pathname } = Astro.url;
+
+const isCurrentPage = pathname.slice(1) === href;
+---
+
+<li>
+	<a
+		href=`/${href}`
+		class={isCurrentPage ? 'underline' : ''}
+		aria-current={ isCurrentPage ? 'page' : 'false'}>{text}</a>
+</li>
