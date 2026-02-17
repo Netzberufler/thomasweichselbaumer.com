@@ -1,13 +1,14 @@
+---
+import HeaderNavigationLink from "./HeaderNavigationLink.astro";
+
+const { pathname } = Astro.url;
+const currentPage = pathname.slice(1);
+---
+
 <nav class="font-sans font-medium text-xl">
 	<ul class="flex items-center gap-6 lg:gap-10">
-		<li>
-			<a href="/blog/">Blog</a>
-		</li>
-		<li>
-			<a href="/projects/">Projects</a>
-		</li>
-		<li>
-			<a href="/about/">About</a>
-		</li>
+		<HeaderNavigationLink href="blog/" text="Blog" />
+		<HeaderNavigationLink href="projects/" text="Projects" />
+		<HeaderNavigationLink href="about/" text="About" />
 	</ul>
 </nav>
