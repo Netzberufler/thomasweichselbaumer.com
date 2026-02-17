@@ -2,7 +2,7 @@
 @import '@fontsource-variable/albert-sans' layer(base);
 @import '@fontsource-variable/lora' layer(base);
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
   --color-main-50: oklch(0.962 0.002 67.9);
