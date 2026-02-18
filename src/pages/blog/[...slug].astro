@@ -1,11 +1,11 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import PageHeader from '../../components/PageHeader.astro';
-import PageExcerpt from '../../components/PageExcerpt.astro';
-import PostDate from '../../components/PostDate.astro';
-import PostNavigation from '../../components/PostNavigation.astro';
-import Separator from '../../components/Separator.astro';
+import PageHeader from '../../components/content/PageHeader.astro';
+import PageExcerpt from '../../components/content/PageExcerpt.astro';
+import PostDate from '../../components/content/PostDate.astro';
+import PostNavigation from '../../components/content/PostNavigation.astro';
+import Separator from '../../components/ui/Separator.astro';
 
 export async function getStaticPaths() {
     const posts = (await getCollection('posts')).sort(

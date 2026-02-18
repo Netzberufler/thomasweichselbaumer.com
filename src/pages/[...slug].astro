@@ -1,9 +1,9 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import PageHeader from '../components/PageHeader.astro';
-import PageExcerpt from '../components/PageExcerpt.astro';
-import Separator from '../components/Separator.astro';
+import PageHeader from '../components/content/PageHeader.astro';
+import PageExcerpt from '../components/content/PageExcerpt.astro';
+import Separator from '../components/ui/Separator.astro';
 
 export async function getStaticPaths() {
 	const pages = await getCollection('pages');
