@@ -96,7 +96,7 @@
     }
 
     code {
-      @apply font-sans bg-main-100 p-1 rounded-md;
+      @apply font-mono text-lg p-1 rounded-md bg-main-100 dark:bg-main-800;
     }
 
     ul {
