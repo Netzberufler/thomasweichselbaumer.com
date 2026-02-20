@@ -79,6 +79,10 @@
       @apply md:mt-6;
     }
 
+    a {
+      @apply underline underline-offset-6 hover:no-underline;
+    }
+
     blockquote {
       @apply md:-mx-18 lg:-mx-36 my-8 md:my-16 font-medium sm:text-center;
 
@@ -89,6 +93,10 @@
       cite {
         @apply text-xl;
       }
+    }
+
+    code {
+      @apply font-sans bg-main-100 p-1 rounded-md;
     }
 
     ul {
