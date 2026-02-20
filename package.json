@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.15",
     "@fontsource-variable/albert-sans": "^5.2.8",
     "@fontsource-variable/lora": "^5.2.8",
     "@tailwindcss/vite": "^4.1.18",
