@@ -43,6 +43,16 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
 
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+
+		<meta property="twitter:card" content="summary" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+
 		<link rel="preload" as="font" type="font/woff2" href={albertSans} crossorigin="anonymous" />
 		<link rel="preload" as="font" type="font/woff2" href={lora} crossorigin="anonymous" />
 
