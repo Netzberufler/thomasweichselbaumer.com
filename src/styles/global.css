@@ -83,6 +83,16 @@
       @apply underline underline-offset-6 hover:no-underline;
     }
 
+    img {
+      @apply my-8 md:my-10;
+    }
+
+    > p {
+      img + em {
+          @apply block -mt-6 md:-mt-8 mb-8 md:mb-10 text-base not-italic text-main-600 dark:text-main-300 md:text-lg;
+      }
+    }
+
     blockquote {
       @apply md:-mx-18 lg:-mx-36 my-8 md:my-16 font-medium sm:text-center;
 
