@@ -36,6 +36,10 @@
 }
 
 @layer base {
+  *:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-main-900 dark:outline-main-50;
+  }
+
   h1, h2, h3, h4 {
     @apply font-sans;
   }
