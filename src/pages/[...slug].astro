@@ -18,7 +18,7 @@ const page = Astro.props;
 const { Content } = await render(page);
 ---
 
-<Layout {...page.data}>
+<Layout {...page.data} title={page.data.title + ' - Thomas Weichselbaumer'}>
 	<PageHeader title={page.data.title}>
 		{page.data.excerpt && (
 			<>

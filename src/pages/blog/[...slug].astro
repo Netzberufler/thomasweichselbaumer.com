@@ -31,7 +31,7 @@ const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout {...post.data}>
+<Layout {...post.data} title={post.data.title + ' - Thomas Weichselbaumer'}>
 	<PageHeader title={post.data.title}>
 		{post.data.excerpt && (
 			<>
