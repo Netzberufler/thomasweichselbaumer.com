@@ -1,13 +1,15 @@
 ---
 import HeaderNavigation from './HeaderNavigation.astro';
+import HeaderNavigationToggle from './HeaderNavigationToggle.astro';
 import ThemeToggle from './ThemeToggle.astro';
 ---
 
-<header class="py-4 sm:py-8 lg:py-16 flex flex-col sm:flex-row gap-6 sm:justify-between items-center [&_a]:hover:underline [&_a]:underline-offset-6">
+<header class="py-4 sm:py-8 lg:py-16 flex flex-row flex-wrap gap-6 justify-between items-center [&_a]:hover:underline [&_a]:underline-offset-6">
 	<p class="font-sans font-medium text-xl">
 		<a href="/">Thomas Weichselbaumer</a>
 	</p>
-	<div class="flex gap-6 lg:gap-10 items-center">
+	<HeaderNavigationToggle />
+	<div id="nav-menu" class="flex flex-col sm:flex-row gap-12 sm:gap-6 lg:gap-10 items-center max-sm:mt-16 max-sm:w-full max-sm:hidden">
 		<HeaderNavigation />
 		<ThemeToggle />
 	</div>
