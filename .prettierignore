@@ -1,0 +1,9 @@
+# Ignore artifacts:
+dist
+
+# Standard
+**/.git
+**/node_modules
+
+# lockfiles
+package-lock.json

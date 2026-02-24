@@ -1,21 +1,37 @@
 {
-  "name": "thomasweichselbaumer.com",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/rss": "^4.0.15",
-    "@astrojs/sitemap": "^3.7.0",
-    "@fontsource-variable/albert-sans": "^5.2.8",
-    "@fontsource-variable/lora": "^5.2.8",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.17.1",
-    "tailwindcss": "^4.1.18"
-  }
+	"name": "thomasweichselbaumer.com",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"lint": "eslint",
+		"prettier": "prettier . --write"
+	},
+	"dependencies": {
+		"@astrojs/rss": "^4.0.15",
+		"@astrojs/sitemap": "^3.7.0",
+		"@fontsource-variable/albert-sans": "^5.2.8",
+		"@fontsource-variable/lora": "^5.2.8",
+		"@tailwindcss/vite": "^4.1.18",
+		"astro": "^5.17.1",
+		"tailwindcss": "^4.1.18"
+	},
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"@typescript-eslint/parser": "^8.56.1",
+		"eslint": "^10.0.2",
+		"eslint-plugin-astro": "^1.6.0",
+		"eslint-plugin-prettier": "^5.5.5",
+		"globals": "^17.3.0",
+		"prettier": "^3.8.1",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-tailwindcss": "^0.7.2",
+		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.56.1",
+		"vite-plugin-eslint": "^1.8.1"
+	}
 }
