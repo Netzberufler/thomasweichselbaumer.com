@@ -14,5 +14,6 @@ const isCurrentPage = pathname.slice(1) === href;
 	<a
 		href=`/${href}`
 		class={isCurrentPage ? 'underline' : ''}
-		aria-current={ isCurrentPage ? 'page' : 'false'}>{text}</a>
+		aria-current={isCurrentPage ? 'page' : 'false'}>{text}</a
+	>
 </li>

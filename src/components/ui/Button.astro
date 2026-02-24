@@ -10,11 +10,16 @@ interface Props {
 const { href, className, variant = 'primary' } = Astro.props;
 
 const variants: Record<Variant, string> = {
-	primary: 'bg-main-950 hover:bg-main-800 text-main-50 dark:bg-main-200 dark:hover:bg-main-300 dark:text-main-950',
-	secondary: 'bg-main-100 hover:bg-main-200 dark:bg-main-800 dark:hover:bg-main-700',
+	primary:
+		'bg-main-950 hover:bg-main-800 text-main-50 dark:bg-main-200 dark:hover:bg-main-300 dark:text-main-950',
+	secondary:
+		'bg-main-100 hover:bg-main-200 dark:bg-main-800 dark:hover:bg-main-700',
 };
 ---
 
-<a class=`inline-block px-6 py-3 font-sans font-medium text-md rounded-4xl no-underline ${variants[variant]} ${className}` href={href}>
+<a
+	class=`inline-block px-6 py-3 font-sans font-medium text-md rounded-4xl no-underline ${variants[variant]} ${className}`
+	href={href}
+>
 	<slot />
 </a>

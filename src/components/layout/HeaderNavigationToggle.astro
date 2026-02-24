@@ -1,36 +1,53 @@
-<button id="nav-toggle" class="sm:hidden w-6 h-6 cursor-pointer [&_svg]:w-6 [&_svg]:h-6 [&_svg]:text-main-950 [&_svg]:hover:text-main-800 [&_svg]:dark:text-main-200 [&_svg]:dark:hover:text-main-300" aria-expanded="false">
-    <span class="nav-toggle__open">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+<button
+	id="nav-toggle"
+	class="[&_svg]:text-main-950 [&_svg]:hover:text-main-800 [&_svg]:dark:text-main-200 [&_svg]:dark:hover:text-main-300 h-6 w-6 cursor-pointer sm:hidden [&_svg]:h-6 [&_svg]:w-6"
+	aria-expanded="false"
+>
+	<span class="nav-toggle__open">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 24 24"
+			fill="currentColor"
+		>
 			<path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
 		</svg>
 		<span class="sr-only">Open</span>
-    </span>
-    <span class="nav-toggle__close hidden">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-			<path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path>
+	</span>
+	<span class="nav-toggle__close hidden">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 24 24"
+			fill="currentColor"
+		>
+			<path
+				d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"
+			></path>
 		</svg>
 		<span class="sr-only">Close</span>
-    </span>
+	</span>
 </button>
 
 <script>
-document.addEventListener('astro:page-load', () => {
-	const navToggle = document.getElementById("nav-toggle");
-	const navMenu = document.getElementById("nav-menu");
-	const openButton = navToggle?.querySelector('.nav-toggle__open');
-	const closeButton = navToggle?.querySelector('.nav-toggle__close');
+	document.addEventListener('astro:page-load', () => {
+		const navToggle = document.getElementById('nav-toggle');
+		const navMenu = document.getElementById('nav-menu');
+		const openButton = navToggle?.querySelector('.nav-toggle__open');
+		const closeButton = navToggle?.querySelector('.nav-toggle__close');
 
-	navToggle?.addEventListener('click', function () {
-		navMenu?.classList.toggle('max-sm:hidden');
-		navMenu?.classList.toggle('max-sm:h-screen');
+		navToggle?.addEventListener('click', function () {
+			navMenu?.classList.toggle('max-sm:hidden');
+			navMenu?.classList.toggle('max-sm:h-screen');
 
-		console.log(openButton, closeButton);
+			console.log(openButton, closeButton);
 
-		navToggle.setAttribute('aria-expanded', navMenu?.classList.contains( 'max-sm:hidden' ) ? 'true' : 'false' );
-		openButton?.classList.toggle('hidden');
-		closeButton?.classList.toggle('hidden');
+			navToggle.setAttribute(
+				'aria-expanded',
+				navMenu?.classList.contains('max-sm:hidden') ? 'true' : 'false',
+			);
+			openButton?.classList.toggle('hidden');
+			closeButton?.classList.toggle('hidden');
 
-		document.body.classList.toggle("overflow-hidden");
+			document.body.classList.toggle('overflow-hidden');
+		});
 	});
-});
 </script>

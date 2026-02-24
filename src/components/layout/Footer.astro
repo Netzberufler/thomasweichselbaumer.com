@@ -4,12 +4,14 @@ import SocialIcons from './SocialIcons.astro';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="mt-16 sm:mt-24 md:mt-32 mb-16">
-	<div class="py-2 sm:py-3 md:py-4 flex flex-col flex-reverse sm:flex-row gap-4 sm:justify-between items-center [&_a]:hover:underline [&_a]:underline-offset-6">
+<footer class="mt-16 mb-16 sm:mt-24 md:mt-32">
+	<div
+		class="flex-reverse flex flex-col items-center gap-4 py-2 sm:flex-row sm:justify-between sm:py-3 md:py-4 [&_a]:underline-offset-6 [&_a]:hover:underline"
+	>
 		<FooterNavigation />
 		<SocialIcons />
 	</div>
-	<p class="max-sm:mt-4 max-sm:text-center text-sm">
+	<p class="text-sm max-sm:mt-4 max-sm:text-center">
 		&copy; {currentYear} Build with ❤️ and Astro.
 	</p>
 </footer>

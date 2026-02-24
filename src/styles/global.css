@@ -1,154 +1,158 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @import '@fontsource-variable/albert-sans' layer(base);
 @import '@fontsource-variable/lora' layer(base);
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
-  --color-main-50: oklch(0.962 0.002 67.9);
-  --color-main-100: oklch(0.923 0.004 67.82);
-  --color-main-200: oklch(0.847 0.007 67.75);
-  --color-main-300: oklch(0.769 0.01 72.63);
-  --color-main-400: oklch(0.687 0.015 67.58);
-  --color-main-500: oklch(0.605 0.018 70.39);
-  --color-main-600: oklch(0.515 0.016 67.46);
-  --color-main-700: oklch(0.423 0.012 72.5);
-  --color-main-800: oklch(0.324 0.009 67.5);
-  --color-main-900: oklch(0.218 0.004 84.56);
-  --color-main-950: oklch(0.16 0.003 67.64);
+	--color-main-50: oklch(0.962 0.002 67.9);
+	--color-main-100: oklch(0.923 0.004 67.82);
+	--color-main-200: oklch(0.847 0.007 67.75);
+	--color-main-300: oklch(0.769 0.01 72.63);
+	--color-main-400: oklch(0.687 0.015 67.58);
+	--color-main-500: oklch(0.605 0.018 70.39);
+	--color-main-600: oklch(0.515 0.016 67.46);
+	--color-main-700: oklch(0.423 0.012 72.5);
+	--color-main-800: oklch(0.324 0.009 67.5);
+	--color-main-900: oklch(0.218 0.004 84.56);
+	--color-main-950: oklch(0.16 0.003 67.64);
 
-  --font-sans: 'Albert Sans Variable', sans-serif;
-  --font-serif: 'Lora Variable', serif;
+	--font-sans: 'Albert Sans Variable', sans-serif;
+	--font-serif: 'Lora Variable', serif;
 
-  --text-5xl: 2.5rem;
-  --text-6xl: 3.5rem;
+	--text-5xl: 2.5rem;
+	--text-6xl: 3.5rem;
 
-  --text-xs--line-height: 1.5;
-  --text-sm--line-height: 1.5;
-  --text-base--line-height: 1.5;
-  --text-lg--line-height: 1.5;
-  --text-xl--line-height: 1.5;
-  --text-2xl--line-height: 1.5;
-  --text-3xl--line-height: 1.5;
-  --text-4xl--line-height: 1.3;
-  --text-5xl--line-height: 1.3;
-  --text-6xl--line-height: 1.15;
+	--text-xs--line-height: 1.5;
+	--text-sm--line-height: 1.5;
+	--text-base--line-height: 1.5;
+	--text-lg--line-height: 1.5;
+	--text-xl--line-height: 1.5;
+	--text-2xl--line-height: 1.5;
+	--text-3xl--line-height: 1.5;
+	--text-4xl--line-height: 1.3;
+	--text-5xl--line-height: 1.3;
+	--text-6xl--line-height: 1.15;
 }
 
 @layer base {
-  *:focus-visible {
-    @apply outline outline-2 outline-offset-2 outline-main-900 dark:outline-main-50;
-  }
+	*:focus-visible {
+		@apply outline-main-900 dark:outline-main-50 outline outline-2 outline-offset-2;
+	}
 
-  h1, h2, h3, h4 {
-    @apply font-sans;
-  }
+	h1,
+	h2,
+	h3,
+	h4 {
+		@apply font-sans;
+	}
 
-  h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-bold;
-  }
-  
-  h2 {
-    @apply text-3xl sm:text-4xl md:text-5xl font-bold;
-  }
-  
-  h3 {
-    @apply text-2xl md:text-3xl font-semibold;
-  }
-  
-  h4 {
-    @apply text-xl md:text-2xl font-semibold;
-  }
+	h1 {
+		@apply text-4xl font-bold sm:text-5xl md:text-6xl;
+	}
+
+	h2 {
+		@apply text-3xl font-bold sm:text-4xl md:text-5xl;
+	}
+
+	h3 {
+		@apply text-2xl font-semibold md:text-3xl;
+	}
+
+	h4 {
+		@apply text-xl font-semibold md:text-2xl;
+	}
 }
 
 @layer components {
-  .content {
-    > * {
-      @apply mt-4;
-    }
+	.content {
+		> * {
+			@apply mt-4;
+		}
 
-    p {
-      @apply text-lg sm:text-xl;
-    }
+		p {
+			@apply text-lg sm:text-xl;
+		}
 
-    h2 {
-      @apply mt-8 md:mt-10;
-    }
-    
-    h3 {
-      @apply mt-6 md:mt-8;
-    }
-    
-    h4 {
-      @apply md:mt-6;
-    }
+		h2 {
+			@apply mt-8 md:mt-10;
+		}
 
-    a {
-      @apply underline underline-offset-6 hover:no-underline;
-    }
+		h3 {
+			@apply mt-6 md:mt-8;
+		}
 
-    img {
-      @apply my-8 md:my-10;
-    }
+		h4 {
+			@apply md:mt-6;
+		}
 
-    > p {
-      img + em {
-          @apply block -mt-6 md:-mt-8 mb-8 md:mb-10 text-base not-italic text-main-600 dark:text-main-300 md:text-lg;
-      }
-    }
+		a {
+			@apply underline underline-offset-6 hover:no-underline;
+		}
 
-    blockquote {
-      @apply md:-mx-18 lg:-mx-36 my-8 md:my-16 font-medium sm:text-center;
+		img {
+			@apply my-8 md:my-10;
+		}
 
-      p {
-        @apply text-3xl sm:text-4xl italic;
-      }
+		> p {
+			img + em {
+				@apply text-main-600 dark:text-main-300 -mt-6 mb-8 block text-base not-italic md:-mt-8 md:mb-10 md:text-lg;
+			}
+		}
 
-      cite {
-        @apply text-xl;
-      }
-    }
+		blockquote {
+			@apply my-8 font-medium sm:text-center md:-mx-18 md:my-16 lg:-mx-36;
 
-    code {
-      @apply font-mono text-lg p-1 rounded-md bg-main-100 dark:bg-main-800;
-    }
+			p {
+				@apply text-3xl italic sm:text-4xl;
+			}
 
-    ul {
-      @apply list-disc;
-    }
+			cite {
+				@apply text-xl;
+			}
+		}
 
-    ol {
-      @apply list-decimal;
-    }
+		code {
+			@apply bg-main-100 dark:bg-main-800 rounded-md p-1 font-mono text-lg;
+		}
 
-    ul,
-    ol {
-      @apply list-inside text-lg sm:text-xl;
+		ul {
+			@apply list-disc;
+		}
 
-      ul, ol {
-        @apply ms-4 mb-2;
-      }
-    }
-  }
+		ol {
+			@apply list-decimal;
+		}
 
-  .content.has-drop-cap {
-    > p:first-child::first-letter {
-      @apply float-left mt-2 me-2 sm:me-4 text-6xl sm:text-7xl md:text-8xl uppercase;
-    }
-  }
+		ul,
+		ol {
+			@apply list-inside text-lg sm:text-xl;
 
-  @keyframes slide-up {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+			ul,
+			ol {
+				@apply ms-4 mb-2;
+			}
+		}
+	}
 
-  .animate {
-    animation: slide-up 0.6s ease-out forwards;
-  }
+	.content.has-drop-cap {
+		> p:first-child::first-letter {
+			@apply float-left me-2 mt-2 text-6xl uppercase sm:me-4 sm:text-7xl md:text-8xl;
+		}
+	}
+
+	@keyframes slide-up {
+		from {
+			opacity: 0;
+			transform: translateY(50px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.animate {
+		animation: slide-up 0.6s ease-out forwards;
+	}
 }

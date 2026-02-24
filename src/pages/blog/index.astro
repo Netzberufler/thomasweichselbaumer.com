@@ -4,18 +4,19 @@ import PageHeader from '../../components/content/PageHeader.astro';
 import PageExcerpt from '../../components/content/PageExcerpt.astro';
 import PostList from '../../components/content/PostList.astro';
 
-
 const SITE_TITLE = 'Blog - Thomas Weichselbaumer';
-const SITE_DESCRIPTION = 'I try to publish an annual review every year to create an ongoing journal of my life—writing about work, business, and everything in between.';
+const SITE_DESCRIPTION =
+	'I try to publish an annual review every year to create an ongoing journal of my life—writing about work, business, and everything in between.';
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION} >
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<PageHeader title="Blog">
 		<PageExcerpt>
-			I try to publish an annual review every year to create an ongoing journal of my life—writing about work, business, and everything in between.
+			I try to publish an annual review every year to create an ongoing journal
+			of my life—writing about work, business, and everything in between.
 		</PageExcerpt>
 	</PageHeader>
-	<section class="mx-auto max-w-2xl animate">
+	<section class="animate mx-auto max-w-2xl">
 		<PostList />
 	</section>
 </Layout>

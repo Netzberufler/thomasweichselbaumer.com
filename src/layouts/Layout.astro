@@ -1,5 +1,5 @@
 ---
-import { ClientRouter } from "astro:transitions";
+import { ClientRouter } from 'astro:transitions';
 import albertSans from '@fontsource-variable/albert-sans/files/albert-sans-latin-wght-normal.woff2?url';
 import lora from '@fontsource-variable/lora/files/lora-latin-wght-normal.woff2?url';
 
@@ -24,11 +24,11 @@ const { title, description } = Astro.props;
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		
-		<link rel="icon" href="/favicon.ico" sizes="32x32">
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-		<link rel="manifest" href="/site.webmanifest">
+
+		<link rel="icon" href="/favicon.ico" sizes="32x32" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
 
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link
@@ -53,12 +53,26 @@ const { title, description } = Astro.props;
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 
-		<link rel="preload" as="font" type="font/woff2" href={albertSans} crossorigin="anonymous" />
-		<link rel="preload" as="font" type="font/woff2" href={lora} crossorigin="anonymous" />
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href={albertSans}
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href={lora}
+			crossorigin="anonymous"
+		/>
 
 		<ClientRouter />
 	</head>
-	<body class="bg-main-50 text-main-900 dark:bg-main-900 dark:text-main-50 font-serif antialiased selection:bg-main-200 selection:text-main-900 dark:selection:bg-main-800 dark:selection:text-main-50">
+	<body
+		class="bg-main-50 text-main-900 dark:bg-main-900 dark:text-main-50 selection:bg-main-200 selection:text-main-900 dark:selection:bg-main-800 dark:selection:text-main-50 font-serif antialiased"
+	>
 		<div class="mx-auto max-w-5xl px-4 sm:px-8">
 			<Header />
 			<main>

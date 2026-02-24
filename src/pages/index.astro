@@ -6,24 +6,23 @@ import PostList from '../components/content/PostList.astro';
 import Button from '../components/ui/Button.astro';
 
 const SITE_TITLE = 'Thomas Weichselbaumer';
-const SITE_DESCRIPTION = 'I\'m a passionate web developer from Augsburg, Germany. My focus is frontend development and I mainly work with WordPress, React, and TypeScript.';
+const SITE_DESCRIPTION =
+	"I'm a passionate web developer from Augsburg, Germany. My focus is frontend development and I mainly work with WordPress, React, and TypeScript.";
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION} >
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<PageHeader title="Hey, I'm Thomas 👋🏼">
 		<PageExcerpt>
-			I'm a passionate web developer from Augsburg, Germany. My focus is frontend development and I mainly work with WordPress, React, and TypeScript.
+			I'm a passionate web developer from Augsburg, Germany. My focus is
+			frontend development and I mainly work with WordPress, React, and
+			TypeScript.
 		</PageExcerpt>
-		<div class="mt-8 flex gap-4 justify-center">
-			<Button href="/projects/">
-				My projects
-			</Button>
-			<Button href="/about/" variant="secondary">
-				About me
-			</Button>
+		<div class="mt-8 flex justify-center gap-4">
+			<Button href="/projects/"> My projects </Button>
+			<Button href="/about/" variant="secondary"> About me </Button>
 		</div>
 	</PageHeader>
-	<section class="mt-16 sm:mt-24 md:mt-32 mx-auto max-w-2xl animate">
+	<section class="animate mx-auto mt-16 max-w-2xl sm:mt-24 md:mt-32">
 		<h2 class="mb-4">Latest blog posts</h2>
 		<PostList numberOfPosts={5} tag="h3" />
 		<Button className="mt-8" href="/blog/" variant="secondary">

@@ -1,12 +1,13 @@
 /** @type {import("prettier").Config} */
 export default {
 	useTabs: true,
-	plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+	singleQuote: true,
+	plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
 	overrides: [
 		{
-			files: ["**/*.astro"],
+			files: ['**/*.astro'],
 			options: {
-				parser: "astro",
+				parser: 'astro',
 			},
 		},
 	],
